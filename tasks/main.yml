@@ -1,12 +1,8 @@
 ---
 - name: configure common aliases
-  lineinfile:
-    path: ~/.bash_aliases
-    line: "{{ item }}"
-    state: present
-    create: true
-  loop:
-    - alias clera="clear"
-    - alias gs="git status"
-    - alias gl="git branch -l"
-    - alias gr="git fetch --all && git reset --hard origin/master"
+  copy:
+    src: 00-aliases.sh
+    dest: /etc/profile.d/
+    owner: root
+    group: root
+    mode: 0744
