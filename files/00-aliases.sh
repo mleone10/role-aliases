@@ -1,6 +1,6 @@
-alias clera="clear"
-alias gs="git status"
-alias gl="git branch -l"
-alias gr="git fetch --all && git reset --hard origin/master"
-alias la="ls -lAogh --group-directories-first"
-alias please="sudo $(history -p !-1)"
+alias clera='clear'
+alias gs='git status'
+alias gl='git branch -l'
+alias gr='git fetch --all && git reset --hard origin/master'
+alias la='ls -lAogh --group-directories-first'
+alias please='sudo $(history -p !-1)'
