@@ -1,8 +1,15 @@
 ---
 - name: configure common aliases
-  copy:
-    src: 00-aliases.sh
-    dest: /etc/profile.d/
-    owner: root
-    group: root
-    mode: 0744
+  ansible.builtin.lineinfile:
+    path: /etc/profile.d/00-aliases.sh
+    line: "{{ item }}"
+    create: true
+    state: present
+  loop:
+    - "alias clera='clear'"
+    - "alias gs='git status'"
+    - "alias gl='git branch -l'"
+    - "alias gr='git fetch --all && git reset --hard origin/master'"
+    - "alias la='ls -lAogh --group-directories-first'"
+    - "alias please='sudo $(history -p !-1)'"
+  become: true
