@@ -1,7 +1,7 @@
 ---
 - name: configure common aliases
   ansible.builtin.lineinfile:
-    path: /etc/profile.d/00-aliases.sh
+    path: "{{ filepath }}"
     line: "{{ item }}"
     create: true
     state: present
