@@ -13,4 +13,3 @@
     - "alias la='ls -lAogh --group-directories-first'"
     - "alias ls='ls --color=auto'"
     - "alias please='sudo $(history -p !-1)'"
-  become: true
